@@ -6,8 +6,8 @@ on:
       - main
 
 jobs:
-  build:
-    name: Build
+  onPR:
+    name: onPR
     runs-on: ubuntu-latest
     steps:
       - name: Checkout branch
@@ -16,5 +16,5 @@ jobs:
       - name: Install
         uses: ./.github/composite-actions/install
 
-      - name: Build packages
-        run: pnpm build
+      - name: onPR
+        run: echo "onPR"
