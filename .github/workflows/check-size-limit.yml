@@ -1,0 +1,15 @@
+name: Check Size Limit
+on: [pull_request, push]
+jobs:
+  check-size-limit-react:
+    runs-on: ubuntu-latest
+    env:
+      CI_JOB_NUMBER: 1
+    steps:
+      - name: Git Checkout
+        uses: actions/checkout@v1
+
+      - name: Install
+        uses: ./.github/composite-actions/install
+
+      - run: echo "size limit PL, PSH"

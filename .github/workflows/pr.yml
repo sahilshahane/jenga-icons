@@ -1,0 +1,20 @@
+name: Pull Request
+
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  onPR:
+    name: onPR
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout branch
+        uses: actions/checkout@v3
+
+      - name: Install
+        uses: ./.github/composite-actions/install
+
+      - name: onPR
+        run: echo "onPR"
